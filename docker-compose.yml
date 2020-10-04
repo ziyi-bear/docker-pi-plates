@@ -1,0 +1,10 @@
+version: '2.3'
+services:
+  # pi-plates
+  relay-service:
+    image: ziyibear/pi-plates
+    restart: always
+    # 給予系統IO權限(No access to /dev/mem. Try running as root)
+    privileged: true
+    volumes: 
+        - './example.py:/app/app.py'
